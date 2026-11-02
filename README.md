@@ -108,7 +108,7 @@ SOLUTION=off ./build.sh
 
 3. 新建 `Contest/AAAsample/c/c.prob.typ`（题面）：
 
-   ```typ
+   ````typ
    #import "../../../lib.typ": section
 
    === 题目描述
@@ -124,10 +124,14 @@ SOLUTION=off ./build.sh
 
    ==== 1.in / 1.out
 
-   #raw("…", block: true)
-
-   #raw("…", block: true)
    ```
+   输入内容……
+   ```
+
+   ```
+   输出内容……
+   ```
+   ````
 
 4. 新建 `Contest/AAAsample/c/c.sol.typ`（题解）：
 
@@ -155,6 +159,40 @@ SOLUTION=off ./build.sh
    ```
 
 完成。运行 `./build.sh` 即可看到新增题目。
+
+## 录入题目内容（读题与翻译）
+
+题面内容通常来自 AtCoder 等 OJ。录入流程：
+
+1. 抓取英文题面。AtCoder 题目页（`https://atcoder.jp/contests/<cid>/tasks/<cid>_<pid>?lang=en`）可能无法通过 `web_fetch` 访问（域名解析为非公网 IP），此时用 `curl` 抓取：
+
+   ```bash
+   curl -sS -A "Mozilla/5.0" \
+     "https://atcoder.jp/contests/abc481/tasks/abc481_e?lang=en" \
+     -o /tmp/abc481_e.html
+   ```
+
+2. 从 HTML 的 `lang-en` 区块提取各小节（Problem Statement / Constraints / Input / Output / Sample）。其中 `<var>…</var>` 是数学公式，`<pre>…</pre>` 是输入输出格式与样例。
+
+3. 翻译为中文并填入 `*.prob.typ`：
+
+   - 标题 `title` 保留 AtCoder 原始英文标题；
+   - 小节标签用中文：`题目描述 / 约束条件 / 输入格式 / 输出格式 / 样例`；
+   - 数学公式改写为 Typst 数学：`\le`→`<=`、`\ge`→`>=`、`\ne`→`!=`、`\times`→`times`、`\dots`→`dots` 等。
+
+4. 输入输出格式与样例统一用 `` ``` `` 代码围栏（不要用 `#raw`），例如：
+
+   ````typ
+   ==== 1.in / 1.out
+
+   ```
+   1 2
+   ```
+
+   ```
+   3
+   ```
+   ````
 
 ## 添加一场比赛
 
