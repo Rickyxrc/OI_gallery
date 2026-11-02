@@ -2,8 +2,8 @@
 
 #let problem-id = "a"
 #let title = "两数之和"
+#let contest-id = "AAAsample"
 
-#import "../main.typ": title as contest-id
 #let statement = include problem-id + ".prob.typ"
 #let solution = include problem-id + ".sol.typ"
 

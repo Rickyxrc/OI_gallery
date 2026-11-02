@@ -2,8 +2,8 @@
 
 #let problem-id = "b"
 #let title = "最大公约数"
+#let contest-id = "AAAsample"
 
-#import "../main.typ": title as contest-id
 #let statement = include problem-id + ".prob.typ"
 #let solution = include problem-id + ".sol.typ"
 
