@@ -2,7 +2,7 @@
 
 #let contest-id = "ICPC2026_Wuhan"
 #let problem-id = "g"
-#let title = "随机播放"
+#let title = "Shuffle Playlist"
 
 #let statement = include problem-id + ".prob.typ"
 #let solution = include problem-id + ".sol.typ"

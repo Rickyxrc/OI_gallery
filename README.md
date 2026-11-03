@@ -215,8 +215,9 @@ SOLUTION=off ./build.sh
      #a()
    ]
 
-   // 单独编译本场比赛（单级目录）
+   // 单独编译本场比赛（单级目录，先输出目录）
    #show: article
+   #outline(title: outline-title, depth: 2)
    #contest()
    ```
 
@@ -233,6 +234,8 @@ SOLUTION=off ./build.sh
    ```
 
 > 如果某场比赛暂时只维护单题、不需要比赛入口，也可以省略第 2、3 步，仅创建题目目录；`./build.sh` 仍会自动编译该单题。
+
+> 单独编译比赛入口时会先输出一份目录（`#outline`），列出本场比赛的各题标题；目录文案用 `outline-title`，深度与 `index.typ` 保持一致（`depth: 2`）。
 
 ## 配置说明
 

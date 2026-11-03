@@ -14,5 +14,6 @@
 
 // 单独编译本场比赛（单级目录）
 #show: article
+#outline(title: outline-title, depth: 2)
 // #set document(title: title)
 #contest()
