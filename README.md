@@ -76,6 +76,8 @@ SOLUTION=off ./build.sh
 
 ## 添加一道题
 
+> **题解与代码留空约定**：本仓库目前只录入题面，不写题解。添加题目时，题解 `*.sol.typ` 与参考代码 `*.cpp` 一律留空（保持空文件）；`*.sol.typ` 中不要写内容、也不要调用 `code-block(read(...))`，只正常填写题面 `*.prob.typ`。
+
 以在比赛 `AAAsample` 下添加题目 `c` 为例：
 
 1. 新建目录 `Contest/AAAsample/c/`。
