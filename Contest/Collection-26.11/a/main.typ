@@ -2,7 +2,7 @@
 
 #let contest-id = "Collection-26.11"
 #let problem-id = "a"
-#let title = "Fibonotci"
+#let title = "[CF575A] Fibonotci"
 
 #let statement = include problem-id + ".prob.typ"
 #let solution = include problem-id + ".sol.typ"
