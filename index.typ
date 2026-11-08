@@ -7,6 +7,7 @@
 #import "Contest/NOIP2023/main.typ" as contest_noip2023
 #import "Contest/Collection-26.11/main.typ" as contest_collection_26_11
 #import "Contest/CF1132/main.typ" as contest_cf1132
+#import "Contest/abc483/main.typ" as contest_abc483
 
 #show: article
 #set document(title: "算法竞赛题解集")
@@ -19,3 +20,4 @@
 #contest_noip2023.contest()
 #contest_collection_26_11.contest()
 #contest_cf1132.contest()
+#contest_abc483.contest()

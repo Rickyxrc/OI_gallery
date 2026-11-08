@@ -76,7 +76,7 @@ SOLUTION=off ./build.sh
 
 ## 添加一道题
 
-> **题解与代码留空约定**：本仓库目前只录入题面，不写题解。添加题目时，题解 `*.sol.typ` 与参考代码 `*.cpp` 一律留空（保持空文件）；`*.sol.typ` 中不要写内容、也不要调用 `code-block(read(...))`，只正常填写题面 `*.prob.typ`。
+> **题解与代码留空约定**：本仓库目前只录入题面，不写题解。添加题目时，参考代码 `*.cpp` 一律留空（保持空文件）；题解 `*.sol.typ` 统一写成占位模板：导入 `code-block`、正文写一句 `TODO` 占位，并在文末调用 `#code-block(read("<pid>.cpp"))`。题面 `*.prob.typ` 正常填写。
 
 以在比赛 `AAAsample` 下添加题目 `c` 为例：
 
@@ -135,12 +135,12 @@ SOLUTION=off ./build.sh
    ```
    ````
 
-4. 新建 `Contest/AAAsample/c/c.sol.typ`（题解）：
+4. 新建 `Contest/AAAsample/c/c.sol.typ`（题解，占位模板）：
 
    ```typ
    #import "../../../lib.typ": code-block
 
-   题解正文……
+   TODO
 
    #code-block(read("c.cpp"))
    ```
@@ -223,7 +223,7 @@ SOLUTION=off ./build.sh
    #contest()
    ```
 
-3. 在大合集入口 `index.typ` 中导入并挂载这场比赛：
+3. 在大合集入口 `index.typ` 中导入并挂载这场比赛。无论比赛类别（AtCoder / ICPC / NOIP / Codeforces 等），一律添加到最后：`#import` 追加到 import 区末尾，`#contest_abc999.contest()` 追加到 `#outline(...)` 之后已有比赛的末尾，不要按类别插到中间。
 
    ```typ
    #import "Contest/abc999/main.typ" as contest_abc999
